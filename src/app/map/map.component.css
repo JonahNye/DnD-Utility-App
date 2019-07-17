@@ -1,0 +1,178 @@
+p , h3 {
+    font-family: 'MedievalSharp', cursive;
+}
+
+@keyframes blinkUn {
+    0% {border: 3px solid red;}
+    100% {border: 1px solid transparent;}
+}
+
+@keyframes blinkV {
+    0% {border: 3px solid blue;}
+    100% {border: 1px solid transparent;}
+}
+
+.close-btn {
+    float: right;
+}
+
+.westruun {
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+    position: absolute;
+    left: 1983px;
+    top: 894px;
+    
+    background-color: transparent;
+    display: block;
+    color: transparent;
+    border-radius: 50%;
+    animation: blinkUn 2s infinite;
+}
+
+.westruun:hover {
+    background-color: #bd665f90;
+    cursor: pointer;
+    border: 2px solid red;
+}
+
+.westruun-information {
+    padding: 5px;
+    z-index: 4;
+    width: 300px;
+    height: 270px;
+    background-color: white;
+    border-radius: 15px;
+    position: absolute;
+    left: 1890px;
+    top: 600px;
+    text-align: center;
+}
+
+.westruun-information i {
+    font-size: 40px;
+    cursor: pointer;
+    color: red;
+}
+
+.drynna {
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+    position: absolute;
+    left: 2268px;
+    top: 898px;
+    
+    background-color: transparent;
+    display: block;
+    color: transparent;
+    border-radius: 50%;
+    animation: blinkV 2s infinite;
+}
+
+.drynna:hover {
+    background-color: #5f80bd90;
+    cursor: pointer;
+    border: 2px solid blue;
+}
+
+.drynna-information {
+    padding: 5px;
+    z-index: 4;
+    width: 300px;
+    height: 265px;
+    background-color: white;
+    border-radius: 15px;
+    position: absolute;
+    left: 2175px;
+    top: 640px;
+    text-align: center;
+}
+
+.drynna-information i {
+    font-size: 40px;
+    cursor: pointer;
+    color: red;
+}
+
+
+.stillben {
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+    position: absolute;
+    left: 2200px;
+    top: 1175px;
+    
+    background-color: transparent;
+    display: block;
+    color: transparent;
+    border-radius: 50%;
+    animation: blinkV 2s infinite;
+}
+
+.stillben:hover {
+    background-color: #5f80bd90;
+    cursor: pointer;
+    border: 2px solid blue;
+}
+
+.stillben-information {
+    padding: 5px;
+    z-index: 4;
+    width: 300px;
+    background-color: white;
+    border-radius: 15px;
+    position: absolute;
+    left: 2275px;
+    top: 1080px;
+    text-align: center;
+}
+
+.stillben-information i {
+    font-size: 40px;
+    cursor: pointer;
+    color: red;
+}
+
+
+.darktow {
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+    position: absolute;
+    left: 2474px;
+    top: 1362px;
+
+    background-color: transparent;
+    display: block;
+    color: transparent;
+    border-radius: 50%;
+    animation: blinkUn 2s infinite;
+}
+
+.darktow:hover {
+    background-color: #bd665f90;
+    cursor: pointer;
+    border: 2px solid red;
+}
+
+.darktow-information {
+    padding: 5px;
+    z-index: 4;
+    width: 300px;
+    /* height: 220px; */
+    background-color: white;
+    border-radius: 15px;
+    position: absolute;
+    text-align: center;
+    left: 2474px;
+    top: 1362px;
+}
+
+.darktow-information i {
+    cursor: pointer;
+    font-size: 40px;
+    color: red;
+}

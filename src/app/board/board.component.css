@@ -1,0 +1,194 @@
+board h2, p {
+    font-family: 'MedievalSharp', cursive;
+}
+
+.board-open-btn {
+    width: 1.8in;
+    height: 1.8in;
+    position: fixed;
+    top: 5px;
+    right: 6px;
+    z-index: 3;
+    opacity: .5;
+    transition: .5s;
+    z-index: 5;
+}
+
+.board-open-btn:hover {
+    border-radius: 100%;
+    box-shadow: inset 0 0 50px #ffebcd;
+    opacity: 1;
+    cursor: pointer; 
+}
+
+.settings-menu {
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 9%;
+    height: 12%;
+    padding: 3%;
+    border-radius: 10px;
+    background-color: #BBB7A3;
+    transition: .5s;
+}
+
+.settings-open {
+    z-index: 5;
+    width: 50%;
+    height: 80%;
+    border: 4px solid #262726;
+    border-radius: 4px;
+}
+
+.misc-settings {
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 9%;
+    width: 80%;
+    background-color: #767162;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid #262726;
+    border-radius: 4px;
+    font-size: 30px;
+}
+
+.misc-settings p{
+    transition: .5s;
+    border: 1px solid white;
+    padding: 1%;
+    border-radius: 4px;
+    color: white;
+    background-color: #262726;
+    cursor: pointer;
+}
+
+.misc-settings p:hover {
+    background-color: white;
+    color: #262726;
+    border: 1px solid white;
+}
+
+.videos {
+    background-color: #BBB7A3;
+    position: relative;
+    left: 50%;
+    margin-top: 2%;
+    width: 80%;
+    transform: translateX(-50%);
+    border: 4px solid #262726;
+    border-radius: 4px;
+}
+
+.video-heading {
+    text-align: center;
+    font-size: 30px;
+}
+
+.video-btn {
+    border: 1px solid #262726;
+    color: white;
+    background-color: #767162;
+    padding: 1%;
+    display: inline-block;
+    margin: 3%;
+    font-size: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+    border-radius: 4px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.video-btn:hover {
+    background-color: #262726;
+    border-color: white;
+}
+
+.image-btn {
+    border: 1px solid #262726;
+    border-radius: 4px;
+    color: white;
+    background-color: #767162;
+    padding: 1%;
+    display: inline-block;
+    margin: 3%;
+    font-size: 30px;
+    margin-left: 5%;
+    margin-right: 5%;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.image-heading {
+    text-align: center;
+    font-size: 30px;
+}
+
+.image-btn:hover {
+    background-color: #262726;
+    border-color: white;
+}
+
+.images {
+    background-color: #BBB7A3;
+    position: relative;
+    left: 50%;
+    margin-top: 2%;
+    width: 80%;
+    transform: translateX(-50%);
+    border: 4px solid #262726;
+    border-radius: 4px;
+}
+
+
+.video-background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* width: 32in;
+    height: 18in; */
+     /*show when selected */
+     overflow: hidden;
+     z-index: 2;
+}
+
+.image-background {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.game-board{
+    /* background-image: url('battle-maps/river-crossing.jpg'); */
+    background-size: cover;
+    width: 32in;
+    height: 18in;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* width: 100%;
+    height: 100%; */
+    z-index: 3;
+}
+
+.tile {
+    z-index: 2;
+    width: 1in;
+    height: 1in;
+    box-sizing: border-box;
+    border: 1px solid black;
+    margin: 0;
+    background-color: transparent;
+}

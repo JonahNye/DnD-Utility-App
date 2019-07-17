@@ -41,6 +41,9 @@ yarn-error.log
 testem.log
 /typings
 
+#battle videos too large for github
+/src/assets/boardResources/board-videos
+
 # System Files
 .DS_Store
 Thumbs.db

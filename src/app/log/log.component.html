@@ -1,0 +1,96 @@
+<section class="background"></section>
+
+<section class="funds">
+    <p (click)="this.addState = !this.addState" class="add-funds"> + </p>
+    <p class="funds-total">1000000</p>
+    <p  (click)="this.removeState = !this.removeState" class="remove-funds">-</p>
+    <!-- <p>attach this to a database. + to have form appear to posto to DB</p> -->
+</section>
+
+<section [ngClass]="{'bank-active' : removeState}" class="remove-state">
+    <input type="number" class="bank-input" placeholder="Withdrawal">
+    <section class="bank-confirm"><i class="material-icons">check</i></section>
+    <section (click)="this.removeState = !this.removeState" class="bank-cancle"><i class="material-icons">clear</i></section>
+</section>
+
+<section [ngClass]="{'bank-active' : addState}" class="add-state">
+    <input type="number" class="bank-input" placeholder="Deposit">
+    <section class="bank-confirm"><i class="material-icons">check</i></section>
+    <section (click)="this.addState = !this.addState" class="bank-cancle"><i class="material-icons">clear</i></section>
+</section>
+
+<section class="supplies">
+    <section class="cloth supply-bundle">
+        <img src="/assets/logResources/rolled-cloth.svg"/>
+        <p>0</p>
+    </section>
+    <section class="lumber supply-bundle">
+        <img src="/assets/logResources/wood-pile.svg"/>
+        <p>0</p>
+    </section>
+    <section class="ironOre supply-bundle">
+        <img src="/assets/logResources/iron-ore.svg"/>
+        <p>0</p>
+    </section>
+    <section class="spices supply-bundle">
+        <img src="/assets/logResources/powder.svg"/>
+        <p>0</p>
+    </section>
+</section>
+
+<section [ngClass]="{'prices-open' : pricesState }" class="prices">
+    <p *ngIf="!pricesState" class="toggle-prices price-before" (click)="this.pricesState = !this.pricesState">Prices</p>
+    <p *ngIf="pricesState" class="toggle-prices price-after" (click)="this.pricesState = !this.pricesState">Close</p>
+    <i class="scroll-left material-icons" *ngIf="cityPosition > 0 && pricesState" (click)="decrementCityPosition()">keyboard_arrow_left</i>
+    <i class="scroll-right material-icons" *ngIf="pricesState && cityPosition < this.cityList.length" (click)="incrementCityPosition()">keyboard_arrow_right</i>
+    <section *ngIf="pricesState" class="price-area">
+
+        <section class="city-price">
+            <h3 style="width: 162px" class="bundle city-name">{{cityName}}</h3>
+            <section class="cloth bundle">
+                <img src="/assets/logResources/rolled-cloth.svg"/>
+                <p>{{pricePackage[cityName].cloth}}</p>
+            </section>
+            <section class="lumber bundle">
+                <img src="/assets/logResources/wood-pile.svg"/>
+                <p>{{pricePackage[cityName].lumber}}</p>
+            </section>
+            <section class="iron-ore bundle">
+                <img src="/assets/logResources/iron-ore.svg"/>
+                <p>{{pricePackage[cityName].ironOre}}</p>
+            </section>
+            <section class="suud bundle">
+                <img src="/assets/logResources/powder.svg"/>
+                <p>{{pricePackage[cityName].Suud}}</p>
+            </section>
+        </section>
+
+    </section>
+</section>
+
+<section [ngClass]="{'sales-open': salesState}" class="sales">
+        <p *ngIf="!salesState" class="toggle-sales sales-before" (click)="this.salesState = !this.salesState">Shop</p>
+        <p *ngIf="salesState" class="toggle-sales sales-after" (click)="this.salesState = !this.salesState">Close</p>
+        <form *ngIf="salesState" action="" class="store">
+            <select name="item" [(ngModel)]="order.item" placeholder="Item">
+                <option value="cloth">Cloth</option>
+                <option value="lumber">Lumber</option>
+                <option value="iron ore">Iron Ore</option>
+                <option value="suud">Suud</option>
+            </select>
+            <section class="calculator">
+                
+                <input id="quantity-input" name="quantity" [(ngModel)]="order.quantity" type="number" placeholder="Quantity">
+                <h3>X</h3>
+                 
+                <input name="price" [(ngModel)]="order.price" type="number" placeholder="Price">
+                <h3>=</h3>
+                
+                <section class="total">{{order.quantity * order.price}}</section>
+            </section>
+            <section class="button-field">
+                <p class="purchase-btn">Purchase</p>
+                <p class="sell-btn">Sell</p>
+            </section>
+        </form>
+</section>

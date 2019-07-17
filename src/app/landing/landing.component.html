@@ -1,0 +1,17 @@
+
+  <img (mouseover)="this.mapState = !this.mapState" (mouseout)="this.mapState = !this.mapState" [ngClass]="{'button-active': mapState}" routerLink="/map" src="/assets/landingResources/border-black-map.png" class="map-button-frame link-button">
+
+  <img (mouseover)="this.logState = !this.logState" (mouseout)="this.logState = !this.logState" [ngClass]="{'button-active': logState}" routerLink="/log" src="/assets/landingResources/border-black-log.png" class="log-button-frame link-button">
+
+  <img (mouseover)="this.boardState = !this.boardState" (mouseout)="this.boardState = !this.boardState" [ngClass]="{'button-active': boardState}" routerLink="/board" src="/assets/landingResources/border-black-board.png" class="board-button-frame link-button">
+
+<section class="landing-image-frame">
+    <section class="landscape" [ngClass]="{
+      'emon-landscape': currentLandscape === Landscape.Emon, 
+      'gorge-landscape': currentLandscape === Landscape.Gorge, 
+      'valley-landscape': currentLandscape === Landscape.Valley,
+      'wFall-landscape': currentLandscape === Landscape.WFall,
+      'zadashGate-landscape': currentLandscape === Landscape.Zadash,
+      'transition-fade': transitionFadeState}">
+    </section>
+</section>

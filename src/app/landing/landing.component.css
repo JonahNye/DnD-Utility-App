@@ -1,0 +1,97 @@
+p {
+    font-family: 'MedievalSharp', cursive;
+}
+
+.landing-image-frame {
+    z-index: 1;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+.landscape {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.transition-fade {
+    opacity: 1;
+    transition: 1s;
+}
+
+.landscape.emon-landscape {
+    background-image: url('/assets/landingResources/emon-harbor.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 65%;
+}
+
+.landscape.gorge-landscape {
+    background-image: url('/assets/landingResources/gorge-view.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 45%;
+}
+
+.landscape.valley-landscape {
+    background-image: url('/assets/landingResources/valley-view.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.landscape.wFall-landscape {
+    background-image: url('/assets/landingResources/waterfall-view.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 65%;
+}
+
+.landscape.zadashGate-landscape {
+    background-image: url('/assets/landingResources/Zadash-gate.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 25%;
+}
+
+.link-button {
+    height: 10%;
+}
+
+.link-button:hover {
+    cursor: pointer;
+    
+}
+
+.map-button-frame {
+    position: absolute;
+    left: 10%;
+    top: 93%;
+    transform: translate(-10%, -93%);
+    z-index: 2;
+}
+
+.log-button-frame {
+    position: absolute;
+    left: 50%;
+    top: 93%;
+    transform: translate(-50%, -93%);
+    z-index: 2;
+}
+
+.board-button-frame {
+    position: absolute;
+    left: 90%;
+    top: 93%;
+    transform: translate(-90%, -93%);
+    z-index: 2;
+}
+
+.button-active {
+    height: 11%;
+    transition: .5s;
+    
+}
