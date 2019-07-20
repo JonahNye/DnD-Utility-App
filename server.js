@@ -1,12 +1,16 @@
-const express = require("express");
-const app = express();
+const express = require("express"); //require express module
+const app = express(); //instance of express
 
-const routes = require("./routes/routes.js");
+
+const cors = require("cors"); //require cor module
+app.use(cors());
+
+const dungeonsData = require("./routes/routes.js"); //require routes
+app.use("/api", dungeonsData);
 
 app.use(express.json());
-app.use(express.static(__src + "/dist"));
-app.use("/", routes);
+app.use(express.static(__dirname + "/public"));
 
-const port = process.env.PORT || 5000;
+const port = 3000;
 
 app.listen(port, () => console.log(`listening on port: ${port}`));

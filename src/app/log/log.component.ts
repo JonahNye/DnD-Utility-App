@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
+import { CommonService } from '../common.service';
 
 interface Prices{
   cloth: number;
@@ -6,6 +7,12 @@ interface Prices{
   ironOre: number;
   Suud: number;
 }
+
+// interface Supplies {
+//   id: number,
+//   item: string,
+//   quantity: number
+// }
 
 interface CommodityPrices {
   "Emon": Prices,
@@ -23,16 +30,57 @@ interface Order {
 @Component({
   selector: 'app-log',
   templateUrl: './log.component.html',
-  styleUrls: ['./log.component.css']
+  styleUrls: ['./log.component.css'],
+  providers: [CommonService]
 })
 
 
-export class LogComponent implements OnInit {
+export class LogComponent{
 
-  constructor() { }
+  suppliesObj :  any;
+  fundsObj : any;
 
-  ngOnInit() {
+  constructor(private commonService : CommonService) { 
+    //intial supplies get
+    this.commonService.getSupplies().subscribe(res=> {
+    console.log(res);
+    this.suppliesObj = res;
+    console.log(this.suppliesObj);
+
+    //intials funds get
+    this.commonService.getFunds().subscribe(res => {
+      this.fundsObj = res;
+      console.log(this.fundsObj);
+    })
+
+  })}
+
+  //     ********   *********      FUNDS         ********     *******
+    //properties for storing user input via ngModel
+    toWithdrawal : number;
+    toDeposit : number;
+
+
+  //direct funds update. Not called by purchase method
+  bankWithdrawal(toWithdrawal){
+    let newBalance = parseInt(this.fundsObj[0].balance) - toWithdrawal;
+    
+    this.commonService.putFunds(newBalance).subscribe(res => {
+      this.fundsObj = res;
+    })
   }
+
+  bankDeposit(toDeposit){
+    let newBalance = parseInt(this.fundsObj[0].balance) + toDeposit;
+    
+    this.commonService.putFunds(newBalance).subscribe(res => {
+      this.fundsObj = res;
+    })
+  }
+
+
+
+  
 
   addState : boolean = false;
   removeState : boolean = false;

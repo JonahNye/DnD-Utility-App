@@ -2,39 +2,38 @@
 
 <section class="funds">
     <p (click)="this.addState = !this.addState" class="add-funds"> + </p>
-    <p class="funds-total">1000000</p>
+    <p class="funds-total">{{fundsObj ? fundsObj[0].balance : ''}}</p>
     <p  (click)="this.removeState = !this.removeState" class="remove-funds">-</p>
-    <!-- <p>attach this to a database. + to have form appear to posto to DB</p> -->
 </section>
 
 <section [ngClass]="{'bank-active' : removeState}" class="remove-state">
-    <input type="number" class="bank-input" placeholder="Withdrawal">
-    <section class="bank-confirm"><i class="material-icons">check</i></section>
+    <input [(ngModel)]="toWithdrawal" type="number" class="bank-input" placeholder="Withdrawal">
+    <section (click)="this.removeState = !this.removeState && bankWithdrawal(toWithdrawal)" class="bank-confirm"><i class="material-icons">check</i></section>
     <section (click)="this.removeState = !this.removeState" class="bank-cancle"><i class="material-icons">clear</i></section>
 </section>
 
 <section [ngClass]="{'bank-active' : addState}" class="add-state">
-    <input type="number" class="bank-input" placeholder="Deposit">
-    <section class="bank-confirm"><i class="material-icons">check</i></section>
+    <input [(ngModel)]="toDeposit" type="number" class="bank-input" placeholder="Deposit">
+    <section (click)="bankDeposit(toDeposit)" class="bank-confirm"><i class="material-icons">check</i></section>
     <section (click)="this.addState = !this.addState" class="bank-cancle"><i class="material-icons">clear</i></section>
 </section>
 
 <section class="supplies">
     <section class="cloth supply-bundle">
         <img src="/assets/logResources/rolled-cloth.svg"/>
-        <p>0</p>
+        <p>{{suppliesObj ? suppliesObj[0].quantity : ''}}</p>
     </section>
     <section class="lumber supply-bundle">
         <img src="/assets/logResources/wood-pile.svg"/>
-        <p>0</p>
+        <p>{{suppliesObj ? suppliesObj[1].quantity : ''}}</p>
     </section>
     <section class="ironOre supply-bundle">
         <img src="/assets/logResources/iron-ore.svg"/>
-        <p>0</p>
+        <p>{{suppliesObj ? suppliesObj[2].quantity : ''}}</p>
     </section>
     <section class="spices supply-bundle">
         <img src="/assets/logResources/powder.svg"/>
-        <p>0</p>
+        <p>{{suppliesObj ? suppliesObj[3].quantity : ''}}</p>
     </section>
 </section>
 
