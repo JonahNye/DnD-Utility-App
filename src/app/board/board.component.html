@@ -2,17 +2,69 @@
 
 <img *ngIf="imageDisplay" width="99.861%" height="99.861%" [src]="this.imagePath" class="image-background">
 
+<!------------       Exp Tracking       ------------>
+
+<section class="kill-count-btn">
+    <img (click)="this.trackerDisplay = !this.trackerDisplay" class="open-tracker-btn" src="/assets/boardResources/grim-reaper.svg">
+</section>
+
+<section [ngClass]="{'exp-open' : trackerDisplay}" class="kill-modal">
+    
+
+    <section [ngClass]="{'display-close' : killDisplay, 'kill-display' : !killDisplay}">
+        <section class="total-stats">
+            <p>Creatures Killed: {{creatureRes ? this.creatureRes.length : ''}}</p>
+            <p>Total Exp: {{totalExp ? this.totalExp : ''}}</p>
+        </section>
+        <p class="form-open-btn" (click)="this.killFormDisplay = !this.killFormDisplay">Add Creature</p>
+    </section>
+
+
+    <section class="creature-form" [ngClass]="{'form-open' : killFormDisplay, 'kill-form' : !killFormDisplay}">
+        <section class="form-background"></section>
+        <input placeholder="Creature" type="text" [(ngModel)]="creature">
+        <select type="text" [(ngModel)]="classification">
+            <option value="aberration">Abberation</option>
+            <option value="ceasts">Beast</option>
+            <option value="celestial">Celestial</option>
+            <option value="construct">Construct</option>
+            <option value="dragons">Dragons</option>
+            <option value="elemental">Elementals</option>
+            <option value="fey">Fey</option>
+            <option value="fiend">Fiend</option>
+            <option value="giants">Giant</option>
+            <option value="humanoid">Humanoid</option>
+            <option value="monstrosity">Monstrosity</option>
+            <option value="ooze">Ooze</option>
+            <option value="plant">Plant</option>
+            <option value="undead">Undead</option>
+        </select>
+        <input type="number" [(ngModel)]="exp" placeholder="Experience Points">
+        <input type="number" [(ngModel)]="cr" placeholder="Challenge Rating">
+        <p (click)="addCreature()" class="add-creature-btn">Add Creature</p>
+        <i class="form-close-btn material-icons" (click)="this.killFormDisplay = !this.killFormDisplay">clear</i>
+    </section>
+
+
+</section>
+
+<!---------------   Board Settings   ---------------->
+
 <section class="board-open-btn">
     <img (click)="this.settingsDisplay = !this.settingsDisplay" class="settings-btn"
         src="/assets/boardResources/cog.svg">
 </section>
 
+
 <section [ngClass]="{'settings-open' : settingsDisplay}" class="settings-menu">
+
+
     <section class="misc-settings">
         <p (click)="this.boardDisplay = !this.boardDisplay">Toggle Grid</p>
         <p (click)="this.videoDisplay = !this.videoDisplay">Toggle Video Map</p>
         <p (click)="this.imageDisplay = !this.imageDisplay">Toggle Static Map</p>
     </section>
+
 
     <section class="videos">
         <p class="video-heading">Video Controls</p>
@@ -39,6 +91,7 @@
 
     </section>
 
+
     <section class="images">
         <p class="image-heading">Static Controls</p>
 
@@ -60,7 +113,10 @@
 
     </section>
 
+
 </section>
+
+<!------------               -----------------    BOARD       -----------        ------------->
 
 <section *ngIf="boardDisplay" class="game-board">
 

@@ -42,13 +42,13 @@ export class LogComponent{
 
   constructor(private commonService : CommonService) { 
     //intial supplies get
-    this.commonService.getSupplies().subscribe(res=> {
+    this.commonService.readSupplies().subscribe(res=> {
     console.log(res);
     this.suppliesObj = res;
     console.log(this.suppliesObj);
 
     //intials funds get
-    this.commonService.getFunds().subscribe(res => {
+    this.commonService.readFunds().subscribe(res => {
       this.fundsObj = res;
       console.log(this.fundsObj);
     })
