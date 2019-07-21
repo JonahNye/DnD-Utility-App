@@ -13,9 +13,30 @@
 
     <section [ngClass]="{'display-close' : killDisplay, 'kill-display' : !killDisplay}">
         <section class="total-stats">
-            <p>Creatures Killed: {{creatureRes ? this.creatureRes.length : ''}}</p>
-            <p>Total Exp: {{totalExp ? this.totalExp : ''}}</p>
+
+
+            <section class="total-ks">
+                    <p>{{creatureRes ? this.creatureRes.length : ''}}</p>
+                    <p>Creatures</p>
+                    <p>Killed</p>
+            </section>
+            
+            <section class="total-exp">
+                    <p>{{totalExp ? this.totalExp : ''}}</p>
+                    <p>Total Exp</p>
+            </section>
+            
+
         </section>
+
+        <section class="kill-list">
+                <section class="kill-instance" *ngFor="let kill of creatureRes">
+                    <strong><p style="font-size: 35px">{{kill.creature}}</p></strong>
+                    <p>{{kill.classification}}</p>
+                    <p>CR: {{kill.cr}}</p>
+                </section>
+            </section>
+
         <p class="form-open-btn" (click)="this.killFormDisplay = !this.killFormDisplay">Add Creature</p>
     </section>
 

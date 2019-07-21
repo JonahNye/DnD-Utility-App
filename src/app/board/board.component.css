@@ -233,11 +233,101 @@ board h2, p {
 }
 
 .total-stats {
-    background-color: #767162;
-    border: 6px solid #262726;
-    border-radius: 5px;
-    color: white;
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 20%;
 }
+
+.total-ks {
+    text-align: center;
+    background-color: #767162;
+    color: white;
+    border: 6px solid #262726;
+    border-radius: 4px;
+    padding: 1%;
+}   
+    .total-ks p:nth-child(1){
+        margin-top: 5%;
+        font-size: 70px;
+        margin-bottom: 5%;
+    }
+
+    .total-ks p:nth-child(2){
+        margin-top: 1%;
+        margin-bottom: 1%;
+        font-size: 40px;
+    }
+
+    .total-ks p:nth-child(3){
+        font-size: 40px;
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }
+
+.total-exp {
+    text-align: center;
+    background-color: #767162;
+    color: white;
+    border: 6px solid #262726;
+    border-radius: 4px;
+    padding: 1%;
+}
+    .total-exp p:nth-child(1){
+        font-size: 70px;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+
+    .total-exp p:nth-child(2){
+        margin-top: 14%;
+        font-size: 45px;
+    }
+
+
+.kill-list {
+    margin-top: 5%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 100%;
+    height: 30%;
+    background-color: #262726;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.kill-list::-webkit-scrollbar {
+    width: 1.5%;
+}
+ 
+.kill-list::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+    background-color: white;
+}
+ 
+.kill-list::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    background-color: #262726ad;
+}
+
+    .kill-instance {
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        background-color: #767162;
+        border: 2px solid white;
+        min-width: 20%;
+        height: 70%;
+        color: white;
+        font-size: 25px;
+        text-align: center;
+    }
+
+
 
 .kill-form {
     position: absolute;
