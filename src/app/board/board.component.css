@@ -35,6 +35,7 @@ board h2, p {
     height: 5%;
     transition: .5s;
     background-color: #BBB7A3;
+    overflow-y: scroll;
 }
 
 .enemy-page-open {
@@ -43,40 +44,186 @@ board h2, p {
     padding: 2%;
     border: 6px solid #262726;
     border-radius: 4px;
-    z-index: 5;
+    z-index: 9;
 }
 
-.guards {
+  .guards {
     font-size: 55px;
     color: #262726;
     width: 80%;
-    border: 1px solid black;
+    background-color: #767162;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-}
+    display: flex;
+    justify-content: space-around;
+    border: 6px solid #0b0435;
+    border-radius: 4px;
+    }
 
-.guards-label {
-    color: white;
+    #guards-label {
+        color: whitesmoke;
+        background-color: #0b0435;
+        padding: 3%;
+        border: 4px solid #262726;
+        border-radius: 3px;
+    }
+
+    .guards img {
+        cursor: pointer;
+        border: 6px solid transparent;
+        transition: .25s;
+        border-radius: 200%;
+    }
+
+    .guards img:hover{
+        border-color: #0b0435;
+    }
+
+.pirates {
+     margin-top: 5%;
+    font-size: 55px;
+    color: #262726;
+    width: 80%;
     background-color: #767162;
-    padding: 5%;
-    border: 4px solid #262726;
-    border-radius: 2px;
-    display: inline-block;
-    width: 25%;
-    /* margin-right: 0; */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+    border: 6px solid #350404;
+    border-radius: 4px;
 }
 
-.guards-btns img {
-    cursor: pointer;
-    border: 5px solid transparent;
-    transition: .25s;
-    border-radius: 200%;
-}
+        #pirate-label {
+            color: whitesmoke;
+            background-color: #350404;
+            padding: 3%;
+            border: 4px solid #262726;
+            border-radius: 3px;
+        }
 
-.guards-btns img:hover{
-    border-color: #262726;
+        .pirates img {
+            cursor: pointer;
+            border: 6px solid transparent;
+            transition: .25s;
+            border-radius: 200%;
+            width: 270px;
+            height: 270px;
+        }
+
+        .pirates img:hover{
+            border-color: #350404;
+        }
+
+.goblins {
+        margin-top: 5%;
+        font-size: 55px;
+        color: #262726;
+        width: 80%;
+        background-color: #767162;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: space-around;
+        border: 6px solid #043508;
+        border-radius: 4px;
+    }
+
+        #goblins-label {
+            color: whitesmoke;
+            background-color: #043508;
+            padding: 3%;
+            border: 4px solid #262726;
+            border-radius: 3px;
+        }
+
+        .goblins img {
+            cursor: pointer;
+            border: 6px solid transparent;
+            transition: .25s;
+            border-radius: 200%;
+            width: 270px;
+            height: 270px;
+        }
+
+        .goblins img:hover{
+            border-color: #043508;
+        }
+
+.civilians {
+            margin-top: 5%;
+            font-size: 55px;
+            color: #262726;
+            width: 80%;
+            background-color: #767162;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: space-around;
+            border: 6px solid #515551;
+            border-radius: 4px;
 }
+    
+            #civilians-label {
+                color: whitesmoke;
+                background-color: #515551;
+                padding: 3%;
+                border: 4px solid #262726;
+                border-radius: 3px;
+            }
+    
+            .civilians img {
+                cursor: pointer;
+                border: 6px solid transparent;
+                transition: .25s;
+                border-radius: 200%;
+                width: 270px;
+                height: 270px;
+            }
+    
+            .civilians img:hover{
+                border-color: #515551;
+            }
+
+            .npcs-1 {
+                margin-top: 5%;
+                font-size: 55px;
+                color: #262726;
+                width: 80%;
+                background-color: #767162;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                justify-content: space-around;
+                border: 6px solid #0b0435;
+                border-radius: 4px;
+    }
+        
+                #npcs1-label {
+                    color: whitesmoke;
+                    background-color: #0b0435;
+                    padding: 3%;
+                    border: 4px solid #262726;
+                    border-radius: 3px;
+                }
+        
+                .npcs-1 img {
+                    cursor: pointer;
+                    border: 6px solid transparent;
+                    transition: .25s;
+                    border-radius: 200%;
+                    width: 270px;
+                    height: 270px;
+                }
+        
+                .npcs-1 img:hover{
+                    border-color: #0b0435;
+                }  
+
 
 app-enemy {
     width: 1.35in;
