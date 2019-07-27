@@ -1,5 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonService } from '../common.service';
+
+interface Enemy {
+  path: string;
+  classification : string;
+}
 
 @Component({
   selector: 'app-board',
@@ -29,6 +34,23 @@ export class BoardComponent {
   trackerDisplay : boolean = false;
   killFormDispay : boolean = false;
   killDisplay : boolean = false;
+  enemyPageDisplay : boolean = false;
+
+
+ // -_-_-_-_-_-_-_-_-_- add enemy -_-_-_-_-_-_-_-_-_-_-_-_- //
+//array of enemies template loops through
+ enemies : Enemy[] = []
+
+addEnemy(path : string, classification : string) {
+  let newEnemy : Enemy = {
+    path: path,
+    classification: classification,
+  }
+
+  this.enemies.push(newEnemy);
+}
+
+
 
   //properties for killed creature DB
   creature : string;
@@ -41,20 +63,20 @@ export class BoardComponent {
   totalExp : number;
 
   addCreature(){
-    let creatureObj = {
-      creature: this.creature,
+    const creatureObj = {
+      creature: this.creature.toLocaleLowerCase(),
       classification : this.classification,
       exp : this.exp,
       cr : this.cr
     }
-
+    console.log(creatureObj)
     this.commonService.postCreature(creatureObj).subscribe((res)=>{
       console.log(res);
     })
 
   }
 
-  //properties for media SRCs
+  //properties for media SRCs. Default media placed in
   videoPath : string = '/assets/boardResources/board-videos/docks.m4v';
 
   imagePath : string = '/assets/boardResources/board-pictures/river-city.png';

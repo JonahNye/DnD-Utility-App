@@ -2,6 +2,32 @@
 
 <img *ngIf="imageDisplay" width="99.861%" height="99.861%" [src]="this.imagePath" class="image-background">
 
+
+<!----   ------      Enemy Maker   --------     ----->
+
+<section class="enemy-page-btn-wrap">
+    <img (click)="this.enemyPageDisplay = !this.enemyPageDisplay" class="enemy-page-btn" src="/assets/boardResources/dragon-head.svg">
+</section>
+
+<section [ngClass]="{'enemy-page-open' : enemyPageDisplay}" class="enemy-page-close">
+
+    <section class="guards">
+        <p id="guards-label">Guards</p>
+        
+        <img src="/assets/boardResources/board-tokens/guard-sword.png" (click)="addEnemy('/assets/boardResources/board-tokens/guard-sword.png', 'humanoid')">
+
+        <img src="/assets/boardResources/board-tokens/guard-spear.png" (click)="addEnemy('/assets/boardResources/board-tokens/guard-spear.png', 'humanoid')">
+        </section>
+    </section>
+
+</section>
+
+<app-enemy cdkDrag *ngFor="let enemy of enemies" [enemy]="enemy" class="enemy">
+    
+</app-enemy>
+
+
+
 <!------------       Exp Tracking       ------------>
 
 <section class="kill-count-btn">

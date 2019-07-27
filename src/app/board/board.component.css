@@ -2,6 +2,89 @@ board h2, p {
     font-family: 'MedievalSharp', cursive;
 }
 
+/* --------------- Enemy Generator Styling -----------------*/
+
+
+.enemy-page-btn-wrap {
+    width: 1.8in;
+    height: 1.8in;
+    position: fixed;
+    bottom: 15px;
+    left: 6px;
+    z-index: 3;
+    opacity: .5;
+    transition: .5s;
+    z-index: 5;
+}
+
+.enemy-page-btn-wrap:hover{
+    border-radius: 100%;
+    box-shadow: inset 0 0 50px #ffebcd;
+    opacity: 1;
+    cursor: pointer;
+    transform: rotate(5deg)
+}
+
+.enemy-page-close {
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 5%;
+    height: 5%;
+    transition: .5s;
+    background-color: #BBB7A3;
+}
+
+.enemy-page-open {
+    width: 55%;
+    height: 85%;
+    padding: 2%;
+    border: 6px solid #262726;
+    border-radius: 4px;
+    z-index: 5;
+}
+
+.guards {
+    font-size: 55px;
+    color: #262726;
+    width: 80%;
+    border: 1px solid black;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.guards-label {
+    color: white;
+    background-color: #767162;
+    padding: 5%;
+    border: 4px solid #262726;
+    border-radius: 2px;
+    display: inline-block;
+    width: 25%;
+    /* margin-right: 0; */
+}
+
+.guards-btns img {
+    cursor: pointer;
+    border: 5px solid transparent;
+    transition: .25s;
+    border-radius: 200%;
+}
+
+.guards-btns img:hover{
+    border-color: #262726;
+}
+
+app-enemy {
+    width: 1.35in;
+    height: 1.35in;
+    position: absolute;
+    z-index: 6;
+}
+
 /*--------------- Board Settings Styling       --------------*/
 
 .board-open-btn {
@@ -20,7 +103,8 @@ board h2, p {
     border-radius: 100%;
     box-shadow: inset 0 0 50px #ffebcd;
     opacity: 1;
-    cursor: pointer; 
+    cursor: pointer;
+    transform: rotate(90deg); 
 }
 
 .settings-menu {
@@ -185,7 +269,8 @@ board h2, p {
     border-radius: 100%;
     box-shadow: inset 0 0 50px #ffebcd;
     opacity: 1;
-    cursor: pointer; 
+    cursor: pointer;
+    transform: rotate(-5deg);
 }
 
 .kill-modal { /*--- Intial state of the modal. ----*/
@@ -257,11 +342,11 @@ board h2, p {
     .total-ks p:nth-child(2){
         margin-top: 1%;
         margin-bottom: 1%;
-        font-size: 40px;
+        font-size: 35px;
     }
 
     .total-ks p:nth-child(3){
-        font-size: 40px;
+        font-size: 35px;
         margin-top: 1%;
         margin-bottom: 1%;
     }

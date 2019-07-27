@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule }   from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+
 
 import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
@@ -11,6 +13,7 @@ import { LogComponent } from './log/log.component';
 import { MapComponent } from './map/map.component';
 import { BoardComponent } from './board/board.component';
 import { CommonService } from './common.service';
+import { EnemyComponent } from './board/enemy/enemy.component';
 
 const routes: Routes = [
 
@@ -27,13 +30,15 @@ const routes: Routes = [
     LandingComponent,
     LogComponent,
     MapComponent,
-    BoardComponent
+    BoardComponent,
+    EnemyComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule, BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    DragDropModule
   ],
   providers: [CommonService],
   bootstrap: [AppComponent]

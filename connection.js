@@ -9,10 +9,3 @@ const credentials = new Pool({
     }); 
  
     module.exports = credentials
-
-
-    //or line 2 : const { Pool } = require("pg");
-
-
-
-    //linne 11 : module.exports = new Pool(credentials)

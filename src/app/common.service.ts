@@ -22,8 +22,8 @@ export class CommonService {
     return this.http.get("http://localhost:3000/api/funds", {responseType: "json"});
   }
 
-  putFunds(newBalance) {
-    return this.http.put(`http://localhost:3000/api/funds/`, newBalance, {responseType: "json"});
+  postFunds(newBalance) {
+    return this.http.post("http://localhost:3000/api/funds", {balance : newBalance}, {responseType: "json"});
   }
 
   //_-_-_-_-_-_-_-_-_-_-_   BOARD REQUESTS    -_-_-_-_-_-_-_-_-_-_-//

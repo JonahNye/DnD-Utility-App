@@ -1,15 +1,23 @@
 const express = require("express"); //require express module
 const app = express(); //instance of express
+const router = require("./routes/routes.js"); //require routes
 
+var bodyParser = require("body-parser");
+app.use(bodyParser.json());
 
 const cors = require("cors"); //require cor module
-app.use(cors());
+app.use(cors({
+    
+}));
 
-const dungeonsData = require("./routes/routes.js"); //require routes
-app.use("/api", dungeonsData);
 
-app.use(express.json());
+
+
+
+app.use("/api", router);
 app.use(express.static(__dirname + "/public"));
+
+
 
 const port = 3000;
 

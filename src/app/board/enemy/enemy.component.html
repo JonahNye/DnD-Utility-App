@@ -1,0 +1,24 @@
+<section [ngClass]="{'face-12' : face12, 'face-6' : face6, 'face-3' : face3, 'face-9' : face9}" [ngStyle]="{'transform' : 'rotate(' + $orientation +'deg)'}" class="enemy">
+    <section [ngStyle]="getCondition()" class="overlay"></section>
+    <img src={{enemy.path}}>
+    <i (click)="this.statusDisplay = !this.statusDisplay" class="material-icons enemy-details">settings_applications</i>
+    <i (click)="this.rotateDisplay = !this.rotateDisplay" class="material-icons enemy-rotate-btn">autorenew</i>
+
+    <section [ngClass]="{'face-12' : face12, 'face-9' : face3, 'face-3' : face9}" *ngIf="statusDisplay" class="enemy-status">
+            <img (click)="this.advantageAgainst = !this.advantageAgainst" src="/assets/boardResources/statusIcons/arrowed.svg">
+            <img (click)="this.disadvantageAgainst = !this.disadvantageAgainst" src="/assets/boardResources/statusIcons/arrows-shield.svg">
+        <img (click)="this.poisoned = !this.poisoned" src="/assets/boardResources/statusIcons/poison-bottle.svg">
+        <img (click)="this.onFire = !this.onFire" src="/assets/boardResources/statusIcons/burning-skull.svg">
+        <img (click)="this.afraid = !this.afraid" src="/assets/boardResources/statusIcons/terror.svg">
+        <img (click)="this.hidden = !this.hidden" src="/assets/boardResources/statusIcons/ninja-mask.svg">
+        <img (click)="this.ethereal = !this.ethereal" src="/assets/boardResources/statusIcons/invisible.svg">
+        <img (click)="this.grappled = !this.grappled" src="/assets/boardResources/statusIcons/grab.svg">
+    </section>
+
+    <section [ngClass]="{'face-12' : face12, 'face-9' : face3, 'face-3' : face9}" *ngIf="rotateDisplay" class="rotate">
+        <img class="up" (click)="rotate(12)" src="/assets/boardResources/statusIcons/look-at.svg">
+        <img class="down" (click)="rotate(6)" src="/assets/boardResources/statusIcons/look-at.svg">
+        <img class="right" (click)="rotate(3)" src="/assets/boardResources/statusIcons/look-at.svg">
+        <img class="left" (click)="rotate(9)" src="/assets/boardResources/statusIcons/look-at.svg">
+    </section>
+</section>

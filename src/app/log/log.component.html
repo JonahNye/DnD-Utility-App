@@ -2,7 +2,7 @@
 
 <section class="funds">
     <p (click)="this.addState = !this.addState" class="add-funds"> + </p>
-    <p class="funds-total">{{fundsObj ? fundsObj[0].balance : ''}}</p>
+    <p class="funds-total">{{updatedBalance ? updatedBalance : ''}}</p>
     <p  (click)="this.removeState = !this.removeState" class="remove-funds">-</p>
 </section>
 

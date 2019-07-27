@@ -51,6 +51,10 @@ export class LogComponent{
     this.commonService.readFunds().subscribe(res => {
       this.fundsObj = res;
       console.log(this.fundsObj);
+      for (let i = 0; i < this.fundsObj.length; i++){
+        this.updatedBalance += this.fundsObj[i].balance;
+        console.log(this.updatedBalance);
+      }
     })
 
   })}
@@ -59,22 +63,28 @@ export class LogComponent{
     //properties for storing user input via ngModel
     toWithdrawal : number;
     toDeposit : number;
+    updatedBalance : number = 0;
 
 
   //direct funds update. Not called by purchase method
   bankWithdrawal(toWithdrawal){
     let newBalance = parseInt(this.fundsObj[0].balance) - toWithdrawal;
     
-    this.commonService.putFunds(newBalance).subscribe(res => {
+    this.commonService.postFunds(newBalance).subscribe(res => {
       this.fundsObj = res;
+      for (let i = 0; i < this.fundsObj.length; i++){
+        this.updatedBalance += this.fundsObj[i].balance; 
+      }
     })
   }
 
   bankDeposit(toDeposit){
-    let newBalance = parseInt(this.fundsObj[0].balance) + toDeposit;
-    
-    this.commonService.putFunds(newBalance).subscribe(res => {
+  
+    this.commonService.postFunds(toDeposit).subscribe(res => {
       this.fundsObj = res;
+      for (let i = 0; i < this.fundsObj.length; i++){
+        this.updatedBalance += this.fundsObj[i].balance; 
+      }
     })
   }
 
