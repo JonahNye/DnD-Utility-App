@@ -6,6 +6,13 @@ interface Enemy {
   classification : string;
 }
 
+interface Ship {
+  pathTop: string;
+  pathMid: string;
+  pathBottom: string;
+  type: string;
+}
+
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
@@ -48,6 +55,19 @@ addEnemy(path : string, classification : string) {
   }
 
   this.enemies.push(newEnemy);
+}
+
+ships : Ship[] =[]
+
+addShip(pathTop : string, pathMid : string, pathBottom : string, type : string){
+  let newShip : Ship = {
+    pathTop: pathTop,
+    pathMid : pathMid,
+    pathBottom : pathBottom,
+    type : type
+  }
+
+  this.ships.push(newShip);
 }
 
 

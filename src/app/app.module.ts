@@ -14,6 +14,7 @@ import { MapComponent } from './map/map.component';
 import { BoardComponent } from './board/board.component';
 import { CommonService } from './common.service';
 import { EnemyComponent } from './board/enemy/enemy.component';
+import { ShipComponent } from './board/ship/ship.component';
 
 const routes: Routes = [
 
@@ -31,7 +32,8 @@ const routes: Routes = [
     LogComponent,
     MapComponent,
     BoardComponent,
-    EnemyComponent
+    EnemyComponent,
+    ShipComponent
   ],
   imports: [
     BrowserModule,

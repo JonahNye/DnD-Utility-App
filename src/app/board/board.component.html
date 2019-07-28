@@ -51,11 +51,15 @@
         <img src="/assets/boardResources/board-tokens/thorvik.png" (click)="addEnemy('/assets/boardResources/board-tokens/thorvik.png', 'humanoid')">
     </section>
 
+    <p (click)="addShip('/assets/boardResources/board-tokens/caravel-top.png', '/assets/boardResources/board-tokens/caravel-mid.png', '/assets/boardResources/board-tokens/caravel-bottom.png', 'caravel')">Add Caravel</p>
+
 </section>
 
 <app-enemy cdkDrag *ngFor="let enemy of enemies" [enemy]="enemy" class="enemy">
     
 </app-enemy>
+
+<app-ship cdkDrag *ngFor="let ship of ships" [ship]="ship" class="ship"></app-ship>
 
 
 
@@ -158,6 +162,8 @@
         <p class="video-btn" (click)="this.videoPath = '/assets/boardResources/board-videos/marketSquare.m4v'">Market Square</p>
 
         <p class="video-btn" (click)="this.videoPath = '/assets/boardResources/board-videos/beach.mp4'">Beach</p>
+
+        <p class="video-btn" (click)="this.videoPath = '/assets/boardResources/board-videos/open-ocean.mp4'">Open Ocean</p>
 
         <p class="video-btn" (click)="this.videoPath = '/assets/boardResources/board-videos/caravel-day.m4v'">Caravel</p>
 
